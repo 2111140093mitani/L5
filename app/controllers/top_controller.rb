@@ -7,7 +7,7 @@ class TopController < ApplicationController
     if user != nil
       login_password = BCrypt::Password.new(user.pass)
       if login_password == params[:pass]
-        session[:login_uid] = user.uid
+        current_user = user.uid
         redirect_to root_path
       else
         render "login"
