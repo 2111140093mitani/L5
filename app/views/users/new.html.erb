@@ -1,7 +1,9 @@
-<%= form_tag ({ action: :create }) do %>
-  <%= label_tag :uid, 'ユーザー名' %>
-  <%= text_field_tag :uid %>
-  <%= label_tag :pass, 'パスワード' %>
-  <%= password_field_tag :pass %>
-  <%= submit_tag '新規登録' %>
+<%= form_for @user, url: { action: :create } do |f| %>
+  <%= f.label :uid, 'ユーザー名' %>
+  <%= f.text_field :uid %>
+  <%= f.label :pass, 'パスワード' %>
+  <%= f.password_field :pass %>
+  <%= f.label :age, '年齢' %>
+  <%= f.text_field :age %>
+  <%= f.submit '新規登録' %>
 <% end %>
